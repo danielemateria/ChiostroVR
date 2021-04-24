@@ -2,6 +2,18 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - ONSPSettings
+    - OVRTouchSample.Hand
+    - OVRTouchSample.HandPose
+    - OVRTouchSample.TouchController
+    - OculusSampleFramework.ButtonController
+    - OculusSampleFramework.ButtonTriggerZone
+    - OculusSampleFramework.FingerTipPokeTool
+    - OculusSampleFramework.FingerTipPokeToolView
+    - OculusSampleFramework.InteractableToolsCreator
+    - OculusSampleFramework.InteractableToolsInputRouter
+    - OculusSampleFramework.RayTool
+    - OculusSampleFramework.RayToolView
+    - OculusSampleFramework.TrainButtonVisualController
     Oculus.Platform.dll:
     - Oculus.Platform.PlatformSettings
     Oculus.VR.Editor.dll:
@@ -10,11 +22,11 @@ ScriptsOnlyBuild:
     Oculus.VR.dll:
     - OVRCameraRig
     - OVRDebugInfo
+    - OVRGrabber
     - OVRHeadsetEmulator
     - OVRManager
     - OVRPlayerController
     - OVRSceneSampleController
-    - OVRScreenFade
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.XR.Management.Editor.dll:
@@ -49,11 +61,27 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -64,24 +92,54 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11660}
     - Class: 114
+      Script: {instanceID: 11748}
+    - Class: 114
       Script: {instanceID: 11886}
     - Class: 114
       Script: {instanceID: 12246}
+    - Class: 114
+      Script: {instanceID: 12490}
     - Class: 114
       Script: {instanceID: 12516}
     - Class: 114
       Script: {instanceID: 12684}
     - Class: 114
-      Script: {instanceID: 12824}
+      Script: {instanceID: 12832}
+    - Class: 114
+      Script: {instanceID: 12944}
+    - Class: 114
+      Script: {instanceID: 12992}
+    - Class: 114
+      Script: {instanceID: 13074}
+    - Class: 114
+      Script: {instanceID: 13118}
+    - Class: 114
+      Script: {instanceID: 13170}
+    - Class: 114
+      Script: {instanceID: 13222}
     - Class: 114
       Script: {instanceID: 13334}
     - Class: 114
+      Script: {instanceID: 13366}
+    - Class: 114
       Script: {instanceID: 13438}
     - Class: 114
-      Script: {instanceID: 13848}
+      Script: {instanceID: 13850}
     - Class: 114
-      Script: {instanceID: 13926}
+      Script: {instanceID: 13928}
+    - Class: 114
+      Script: {instanceID: 13948}
+    - Class: 114
+      Script: {instanceID: 14250}
+    - Class: 114
+      Script: {instanceID: 14450}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 120
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 137
       Script: {instanceID: 0}
     - Class: 143
       Script: {instanceID: 0}

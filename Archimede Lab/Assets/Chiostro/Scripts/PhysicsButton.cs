@@ -10,7 +10,7 @@ public class PhysicsButton : MonoBehaviour
     [SerializeField] private float deadZone = 0.025f;
     public UnityEvent onPressed, onReleased;
 
-    private bool _isPressed;
+    public bool _isPressed;
     private Vector3 _startPos;
     private ConfigurableJoint _joint;
     // Start is called before the first frame update
@@ -44,13 +44,11 @@ public class PhysicsButton : MonoBehaviour
     {
         _isPressed = true;
         onPressed.Invoke();
-        Debug.Log("Pressed");
     }
 
     private void Released()
     {
         _isPressed = false;
         onReleased.Invoke();
-        Debug.Log("Released");
     }
 }

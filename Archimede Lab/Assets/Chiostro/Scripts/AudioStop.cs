@@ -23,9 +23,13 @@ public class AudioStop : MonoBehaviour
     public void Pressed()
     {
         if (!isPressed)
+        {
             Stop();
+        }
         else
+        {
             Resume();
+        }
     }
 
     public void Stop()

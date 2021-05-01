@@ -41,4 +41,14 @@ public class Attiva : MonoBehaviour
             videoPlayer.Play();
         }
     }
+
+    public void Disattiva()
+    {
+        if (meshTV.enabled)
+        {
+            meshTV.enabled = false;
+            meshScreen.enabled = false;
+            videoPlayer.Pause();
+        }
+    }
 }

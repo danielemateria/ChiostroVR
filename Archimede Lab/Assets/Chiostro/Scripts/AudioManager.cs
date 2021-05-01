@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     public GameObject buttonTerritorio;
     public GameObject buttonUtilizzo;
 
+    private AudioSource sourceBackground;
     private AudioSource audioAffreschi;
     private AudioSource audioArchitettura;
     private AudioSource audioCostruzione;
@@ -23,9 +24,12 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource audioPrincipale;
 
+    private bool isPressed;
     // Start is called before the first frame update
     void Start()
     {
+        isPressed = false;
+        sourceBackground = backgroundAudio.GetComponent<AudioSource>();
         audioAffreschi = buttonAffreschi.GetComponent<AudioSource>();
         audioArchitettura = buttonArchitettura.GetComponent<AudioSource>();
         audioComplesso = buttonComplesso.GetComponent<AudioSource>();
@@ -37,7 +41,12 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!audioPrincipale.isPlaying && isPressed)
+        {
+            sourceBackground.enabled = true;
+            sourceBackground.Play();
+            isPressed = false;
+        }
     }
 
     public void Play(int buttonIndex)
@@ -45,12 +54,16 @@ public class AudioManager : MonoBehaviour
         if (!audioPrincipale.isPlaying)
         {
             switchIndex(buttonIndex);
+            isPressed = true;
             audioPrincipale.Play();
         }
         else
         {
             switchIndex(buttonIndex);
+            isPressed = false;
             audioPrincipale.Stop();
+            sourceBackground.enabled = true;
+            sourceBackground.Play();
         }
     }
 

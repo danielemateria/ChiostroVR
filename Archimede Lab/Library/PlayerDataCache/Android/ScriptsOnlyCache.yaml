@@ -5,6 +5,8 @@ ScriptsOnlyBuild:
     - AudioManager
     - AudioStop
     - DontDestroyAudio
+    - HandedInputSelector
+    - LaserPointer
     - ONSPSettings
     - OVRTouchSample.Hand
     - OVRTouchSample.HandPose
@@ -28,7 +30,9 @@ ScriptsOnlyBuild:
     - OVRHeadsetEmulator
     - OVRManager
     - OVRPlayerController
+    - OVRRaycaster
     - OVRSceneSampleController
+    - UnityEngine.EventSystems.OVRInputModule
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.XR.Management.Editor.dll:
@@ -45,7 +49,10 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
-    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Chiostro.unity:
     - Class: 1
@@ -93,9 +100,19 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 11396}
+    - Class: 114
+      Script: {instanceID: 11398}
+    - Class: 114
+      Script: {instanceID: 11402}
+    - Class: 114
+      Script: {instanceID: 11434}
+    - Class: 114
       Script: {instanceID: 11510}
     - Class: 114
       Script: {instanceID: 11662}
+    - Class: 114
+      Script: {instanceID: 11772}
     - Class: 114
       Script: {instanceID: 11888}
     - Class: 114
@@ -125,6 +142,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13124}
     - Class: 114
+      Script: {instanceID: 13212}
+    - Class: 114
       Script: {instanceID: 13228}
     - Class: 114
       Script: {instanceID: 13340}
@@ -139,16 +158,20 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13938}
     - Class: 114
+      Script: {instanceID: 13940}
+    - Class: 114
       Script: {instanceID: 13958}
+    - Class: 114
+      Script: {instanceID: 14226}
     - Class: 114
       Script: {instanceID: 14260}
     - Class: 114
       Script: {instanceID: 14296}
-    - Class: 114
-      Script: {instanceID: 14378}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -163,6 +186,14 @@ ScriptsOnlyBuild:
     - Class: 196
       Script: {instanceID: 0}
     - Class: 205
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     - Class: 328
       Script: {instanceID: 0}
@@ -1671,7 +1702,7 @@ ScriptsOnlyBuild:
     className: TeleportTargetHandlerNavMesh
   - hash:
       serializedVersion: 2
-      Hash: 85e8aa29d665952264bc2b39d7dd56b9
+      Hash: 39d80cc683459a8dcad09ae1ca115196
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LaserPointer

@@ -1012,7 +1012,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 718a9eceaf9c1b610521065501681c04
+      Hash: e64b4abaae46865b520ad1fb6921ab60
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Attiva

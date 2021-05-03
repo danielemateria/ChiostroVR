@@ -10,10 +10,13 @@ public class Attiva : MonoBehaviour
     public VideoPlayer videoPlayer;
     public MeshRenderer meshTV;
     public MeshRenderer meshScreen;
+    public GameObject backgroundAudio;
+    private AudioSource backgroundSource;
 
     // Start is called before the first frame update
     void Start()
     {
+        backgroundSource = backgroundAudio.GetComponent<AudioSource>();
         meshTV = TV.GetComponent<MeshRenderer>();
         meshTV.enabled = false;
         meshScreen = screen.GetComponent<MeshRenderer>();
@@ -23,7 +26,11 @@ public class Attiva : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(meshTV.enabled && !videoPlayer.isPlaying)
+        {
+            meshTV.enabled = false;
+            backgroundSource.Play();
+        }
     }
 
     public void AttivaDisattiva()

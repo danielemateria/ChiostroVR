@@ -759,7 +759,7 @@ Transform:
   - {fileID: 255695236}
   - {fileID: 1961779703}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!1 &159506204
 GameObject:
@@ -995,7 +995,7 @@ Transform:
   - {fileID: 1670971896}
   - {fileID: 2124689687}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &236466601 stripped
 GameObject:
@@ -1408,7 +1408,7 @@ Transform:
   - {fileID: 521767394}
   - {fileID: 936222452}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &356159942 stripped
 GameObject:
@@ -2001,12 +2001,12 @@ GameObject:
   m_Component:
   - component: {fileID: 462297252}
   m_Layer: 0
-  m_Name: Button (1)
+  m_Name: ButtonGrande
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &462297252
 Transform:
   m_ObjectHideFlags: 0
@@ -2875,7 +2875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 708690128}
   m_Layer: 0
-  m_Name: Button
+  m_Name: ButtonVideo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2895,7 +2895,7 @@ Transform:
   - {fileID: 515842052}
   - {fileID: 788969538}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &748285919
 GameObject:
@@ -3346,7 +3346,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &829051371
 AudioSource:
@@ -3475,7 +3475,7 @@ Transform:
   - {fileID: 623722451}
   - {fileID: 159506205}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 90}
 --- !u!1 &918856169
 GameObject:
@@ -3508,7 +3508,7 @@ Transform:
   - {fileID: 384887774}
   - {fileID: 1017489920}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &926665807
 GameObject:
@@ -3541,7 +3541,7 @@ Transform:
   - {fileID: 1955248185}
   - {fileID: 1411489654}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 90}
 --- !u!1 &936222451
 GameObject:
@@ -3996,7 +3996,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1040144507
 MonoBehaviour:
@@ -4606,7 +4606,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 0
   m_SkipOnDrop: 1
-  m_Looping: 1
+  m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
 --- !u!23 &1276539732
@@ -4687,6 +4687,7 @@ MonoBehaviour:
   videoPlayer: {fileID: 1276539730}
   meshTV: {fileID: 1286975937}
   meshScreen: {fileID: 1276539732}
+  backgroundAudio: {fileID: 0}
 --- !u!1 &1286975935
 GameObject:
   m_ObjectHideFlags: 0
@@ -5830,7 +5831,7 @@ Transform:
   - {fileID: 1706048123}
   - {fileID: 327262929}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 270}
 --- !u!1 &1489342031 stripped
 GameObject:
@@ -7336,7 +7337,7 @@ Transform:
   - {fileID: 1851201990}
   - {fileID: 82026827}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!1001 &1983925783
 PrefabInstance:
@@ -7418,7 +7419,7 @@ PrefabInstance:
     - target: {fileID: 8926460010832642627, guid: b608d259d5f995a4f9c8d41566d93989,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8926460010832642627, guid: b608d259d5f995a4f9c8d41566d93989,
         type: 3}
@@ -7454,6 +7455,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -135
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926460010833075811, guid: b608d259d5f995a4f9c8d41566d93989,
+        type: 3}
+      propertyPath: m_Name
+      value: TavoloAngolare
       objectReference: {fileID: 0}
     - target: {fileID: 8926460010833075811, guid: b608d259d5f995a4f9c8d41566d93989,
         type: 3}

@@ -32,10 +32,12 @@ public class MenuManager : MonoBehaviour
     {
         if (!menuAudio.enabled)
         {
+            menuPrincipale.enabled = false;
             menuAudio.enabled = true;
         }
         else
         {
+            menuPrincipale.enabled = true;
             menuAudio.enabled = false;
         }
     }
@@ -44,10 +46,12 @@ public class MenuManager : MonoBehaviour
     {
         if (!menuVideo.enabled)
         {
+            menuPrincipale.enabled = false;
             menuVideo.enabled = true;
         }
         else
         {
+            menuPrincipale.enabled = true;
             menuVideo.enabled = false;
         }
     }

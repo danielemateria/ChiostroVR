@@ -27,4 +27,28 @@ public class MenuManager : MonoBehaviour
             }
         }
     }
+
+    public void openCloseAudioMenu()
+    {
+        if (!menuAudio.enabled)
+        {
+            menuAudio.enabled = true;
+        }
+        else
+        {
+            menuAudio.enabled = false;
+        }
+    }
+
+    public void openCloseVideoMenu()
+    {
+        if (!menuVideo.enabled)
+        {
+            menuVideo.enabled = true;
+        }
+        else
+        {
+            menuVideo.enabled = false;
+        }
+    }
 }

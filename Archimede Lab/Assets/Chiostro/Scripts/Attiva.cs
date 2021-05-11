@@ -8,7 +8,6 @@ public class Attiva : MonoBehaviour
     public GameObject TV;
     public GameObject screen;
     public VideoPlayer videoPlayer;
-    public MeshRenderer meshTV;
     public MeshRenderer meshScreen;
     public GameObject backgroundAudio;
     private AudioSource backgroundSource;
@@ -17,8 +16,6 @@ public class Attiva : MonoBehaviour
     void Start()
     {
         backgroundSource = backgroundAudio.GetComponent<AudioSource>();
-        meshTV = TV.GetComponent<MeshRenderer>();
-        meshTV.enabled = false;
         meshScreen = screen.GetComponent<MeshRenderer>();
         meshScreen.enabled = false;
     }
@@ -26,24 +23,23 @@ public class Attiva : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(meshTV.enabled && !videoPlayer.isPlaying)
+        if(!videoPlayer.isPlaying)
         {
-            meshTV.enabled = false;
+            meshScreen.enabled = false;
+            backgroundSource.enabled = true;
             backgroundSource.Play();
         }
     }
 
     public void AttivaDisattiva()
     {
-        if (meshTV.enabled)
+        if (meshScreen.enabled)
         {
-            meshTV.enabled = false;
             meshScreen.enabled = false;
             videoPlayer.Pause();
         }
-        else if(!meshTV.enabled)
+        else if(!meshScreen.enabled)
         {
-            meshTV.enabled = true;
             meshScreen.enabled = true;
             videoPlayer.Play();
         }
@@ -51,9 +47,8 @@ public class Attiva : MonoBehaviour
 
     public void Disattiva()
     {
-        if (meshTV.enabled)
+        if (meshScreen.enabled)
         {
-            meshTV.enabled = false;
             meshScreen.enabled = false;
             videoPlayer.Pause();
         }

@@ -11,12 +11,19 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         menuPrincipale.enabled = false;
+        menuAudio.enabled = false;
+        menuVideo.enabled = false;
     }
 
     private void Update()
     {
         if (OVRInput.GetDown(OVRInput.Touch.Two))
         {
+            if (menuAudio.enabled)
+                menuAudio.enabled = false;
+            if (menuVideo.enabled)
+                menuVideo.enabled = false;
+
             if (menuPrincipale.enabled)
             {
                 menuPrincipale.enabled = false;

@@ -26,7 +26,6 @@ public class Attiva : MonoBehaviour
         if(!videoPlayer.isPlaying)
         {
             meshScreen.enabled = false;
-            backgroundSource.enabled = true;
             backgroundSource.Play();
         }
     }

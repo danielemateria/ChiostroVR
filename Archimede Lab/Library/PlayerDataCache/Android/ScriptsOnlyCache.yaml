@@ -19,6 +19,7 @@ ScriptsOnlyBuild:
     - OculusSampleFramework.RayTool
     - OculusSampleFramework.RayToolView
     - PhysicsButton
+    - TurnBack
     Oculus.Platform.dll:
     - Oculus.Platform.PlatformSettings
     Oculus.VR.Editor.dll:
@@ -170,6 +171,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14262}
     - Class: 114
       Script: {instanceID: 14298}
+    - Class: 114
+      Script: {instanceID: 57272}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -1877,6 +1880,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: d7db20b6d78b08f24161a9fedde5a329
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TurnBack
+  - hash:
+      serializedVersion: 2
+      Hash: 06d3040f6ef6fcd24480037bf577da5e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SceneTrigger
   platform: 13
   scenePathNames:
   - Assets/Scenes/Chiostro.unity

@@ -36,13 +36,11 @@ public class AudioStop : MonoBehaviour
     {
         isPressed = true;
         AS.Stop();
-        AS.enabled = false;
     }
 
     public void Resume()
     {
         isPressed = false;
-        AS.enabled = true;
         AS.Play();
     }
 }

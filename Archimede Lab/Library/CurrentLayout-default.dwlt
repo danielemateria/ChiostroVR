@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 85
+  controlID: 128
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 86
+  controlID: 129
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 87
+  controlID: 130
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -394,9 +394,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b64c0400
-      m_LastClickedID: 281782
-      m_ExpandedIDs: e47affff007bffff1c7bffffdc7dfffff87dffff147effff8081ffffa081ffffc883ffff40fbffff66fbffff143b0000383b0000743b0000c23b0000003e0000ae610100cc670100c47801006c7d0100b8990100e6b801006ace0200
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 2266ffff4266ffff6a68ffff0a74ffff0c74ffffd077ffffec77ffff0878ffff647dffff847dffffac7fffff8e83ffffae83ffffd685ffff40fbffff66fbffff383b0000f23b0000a03c00005668010084830100eec2010058d0020076d602006ee70200f2f2020062080300902703006a5d0400925d04006284040030940400943d050008520500
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -456,9 +456,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -16.378098, y: 2.4114761, z: -30.718094}
+    m_Target: {x: -18.5791, y: 2.413042, z: -18.510265}
     speed: 2
-    m_Value: {x: -16.378098, y: 2.4114761, z: -30.718094}
+    m_Value: {x: -18.5791, y: 2.413042, z: -18.510265}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -504,13 +504,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.0382404, y: -0.36623725, z: 0.015031849, w: 0.9296373}
+    m_Target: {x: 0.12540457, y: 0.34909767, z: -0.04720247, w: 0.9274575}
     speed: 2
-    m_Value: {x: 0.03828449, y: -0.36343879, z: 0.014916736, w: 0.9307116}
+    m_Value: {x: 0.1281863, y: 0.3489543, z: -0.048249528, w: 0.9270767}
   m_Size:
-    m_Target: 0.6757592
+    m_Target: 2.0206094
     speed: 2
-    m_Value: 0.6757592
+    m_Value: 1.7206093
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -574,19 +574,19 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Chiostro/Scripts
+    - Assets/Chiostro/Images
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Chiostro/Scripts
+  - Assets/Chiostro/Images
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\danie\Desktop\archimedelab4binf\Archimede Lab
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 69.999695}
-    m_SelectedIDs: e6c90000
-    m_LastClickedID: 51686
+    m_SelectedIDs: f0c90000
+    m_LastClickedID: 51696
     m_ExpandedIDs: 00000000d0c90000d2c90000d4c9000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0

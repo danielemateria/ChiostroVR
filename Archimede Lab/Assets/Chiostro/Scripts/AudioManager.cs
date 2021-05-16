@@ -43,7 +43,6 @@ public class AudioManager : MonoBehaviour
     {
         if (!audioPrincipale.isPlaying && isPressed)
         {
-            sourceBackground.enabled = true;
             sourceBackground.Play();
             isPressed = false;
         }
@@ -62,9 +61,33 @@ public class AudioManager : MonoBehaviour
             switchIndex(buttonIndex);
             isPressed = false;
             audioPrincipale.Stop();
-            sourceBackground.enabled = true;
-            sourceBackground.Play();
+            audioPrincipale.clip = sourceBackground.clip;
+            audioPrincipale.Play();
         }
+    }
+
+    public void Pressed()
+    {
+        if (!isPressed)
+        {
+            Stop();
+        }
+        else
+        {
+            Resume();
+        }
+    }
+
+    public void Stop()
+    {
+        audioPrincipale.Stop();
+        isPressed = true;
+    }
+
+    public void Resume()
+    {
+        audioPrincipale.Play();
+        isPressed = false;
     }
 
     void switchIndex(int buttonIndex)

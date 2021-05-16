@@ -11,6 +11,7 @@ public class Attiva : MonoBehaviour
     public MeshRenderer meshScreen;
     public GameObject backgroundAudio;
     private AudioSource backgroundSource;
+    bool playing;
 
     // Start is called before the first frame update
     void Start()
@@ -18,15 +19,17 @@ public class Attiva : MonoBehaviour
         backgroundSource = backgroundAudio.GetComponent<AudioSource>();
         meshScreen = screen.GetComponent<MeshRenderer>();
         meshScreen.enabled = false;
+        playing = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!videoPlayer.isPlaying)
+        if(!videoPlayer.isPlaying && playing)
         {
             meshScreen.enabled = false;
             backgroundSource.Play();
+            playing = false;
         }
     }
 
@@ -35,12 +38,14 @@ public class Attiva : MonoBehaviour
         if (meshScreen.enabled)
         {
             meshScreen.enabled = false;
-            videoPlayer.Pause();
+            videoPlayer.Stop();
+            playing = false;
         }
         else if(!meshScreen.enabled)
         {
             meshScreen.enabled = true;
             videoPlayer.Play();
+            playing = true;
         }
     }
 
@@ -50,6 +55,7 @@ public class Attiva : MonoBehaviour
         {
             meshScreen.enabled = false;
             videoPlayer.Pause();
+            playing = false;
         }
     }
 }

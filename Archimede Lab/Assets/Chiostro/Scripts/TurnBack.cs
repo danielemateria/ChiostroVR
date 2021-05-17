@@ -24,11 +24,11 @@ public class TurnBack : MonoBehaviour {
 	[Tooltip("To edit the look of the text Go to Assets > Create > GUIskin. Add the new Guiskin to the Custom Skin proptery. If you select the GUIskin in your project tab you can now adjust the font, colour, size etc of the text")]
 	public GUISkin customSkin;
 
-	public Canvas affreschiFrancesco;
+	public Canvas hotspot;
 
     private void Start()
     {
-		affreschiFrancesco.enabled = false;
+		hotspot.enabled = false;
     }
 
     // if this script is on an object with a collider display the Gui
@@ -41,7 +41,7 @@ public class TurnBack : MonoBehaviour {
 	void OnTriggerExit() 
 	{
 		GuiOn = false;
-		affreschiFrancesco.enabled = false;
+		hotspot.enabled = false;
 	}
 
 	void OnGUI()
@@ -58,7 +58,7 @@ public class TurnBack : MonoBehaviour {
 			GUI.BeginGroup (new Rect ((Screen.width - BoxSize.width) / 2, (Screen.height - BoxSize.height) / 2, BoxSize.width, BoxSize.height));
 			// All rectangles are now adjusted to the group. (0,0) is the topleft corner of the group.
 
-			affreschiFrancesco.enabled = true;
+			hotspot.enabled = true;
 
 			// End the group we started above. This is very important to remember!
 			GUI.EndGroup ();

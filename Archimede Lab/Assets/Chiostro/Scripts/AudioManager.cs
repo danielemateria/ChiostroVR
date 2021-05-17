@@ -29,10 +29,12 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         isPressed = false;
+        audioPrincipale.volume = (float)0.2;
         sourceBackground = backgroundAudio.GetComponent<AudioSource>();
         audioAffreschi = buttonAffreschi.GetComponent<AudioSource>();
         audioArchitettura = buttonArchitettura.GetComponent<AudioSource>();
         audioComplesso = buttonComplesso.GetComponent<AudioSource>();
+        audioCostruzione = buttonCostruzione.GetComponent<AudioSource>();
         audioPozzo = buttonPozzo.GetComponent<AudioSource>();
         audioTerritorio = buttonTerritorio.GetComponent<AudioSource>();
         audioUtilizzo = buttonUtilizzo.GetComponent<AudioSource>();
@@ -43,7 +45,9 @@ public class AudioManager : MonoBehaviour
     {
         if (!audioPrincipale.isPlaying && isPressed)
         {
-            sourceBackground.Play();
+            audioPrincipale.volume = (float)0.2;
+            audioPrincipale.clip = sourceBackground.clip;
+            audioPrincipale.Play();
             isPressed = false;
         }
     }
@@ -52,15 +56,16 @@ public class AudioManager : MonoBehaviour
     {
         if (!audioPrincipale.isPlaying)
         {
-            switchIndex(buttonIndex);
+            SwitchIndex(buttonIndex);
             isPressed = true;
             audioPrincipale.Play();
         }
         else
         {
-            switchIndex(buttonIndex);
+            SwitchIndex(buttonIndex);
             isPressed = false;
             audioPrincipale.Stop();
+            audioPrincipale.volume = (float)0.2;
             audioPrincipale.clip = sourceBackground.clip;
             audioPrincipale.Play();
         }
@@ -90,8 +95,27 @@ public class AudioManager : MonoBehaviour
         isPressed = false;
     }
 
-    void switchIndex(int buttonIndex)
+    public void BackgroundStop()
     {
+        if(audioPrincipale.clip != sourceBackground.clip)
+        {
+            audioPrincipale.clip = sourceBackground.clip;
+        }
+        audioPrincipale.Stop();
+    }
+
+    public void BackgroundResume()
+    {
+        if (audioPrincipale.clip != sourceBackground.clip)
+        {
+            audioPrincipale.clip = sourceBackground.clip;
+        }
+        audioPrincipale.Play();
+    }
+
+    void SwitchIndex(int buttonIndex)
+    {
+        audioPrincipale.volume = (float)0.5;
         switch (buttonIndex)
         {
             case 1:

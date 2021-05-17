@@ -38,12 +38,12 @@ public class MenuManager : MonoBehaviour
             else
             {
                 menuPrincipale.enabled = true;
-                OpenPanelMenu();
+                //OpenPanelMenu();
             }
         }
     }
 
-    public void OpenPanelMenu()
+    /*public void OpenPanelMenu()
     {
         if(panel != null)
         {
@@ -54,7 +54,7 @@ public class MenuManager : MonoBehaviour
                 animator.SetBool("open", !isOpen);
             }
         }
-    }
+    }*/
 
     public void OpenCloseAudioMenu()
     {

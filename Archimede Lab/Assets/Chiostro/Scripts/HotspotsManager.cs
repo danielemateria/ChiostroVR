@@ -12,10 +12,13 @@ public class HotspotsManager : MonoBehaviour
     public GameObject porteCollider;
     public GameObject porteCollider1;
     private GameObject[] colliders = new GameObject[6];
+    public Canvas istruzioni;
+    public OVRPlayerController player;
 
     // Start is called before the first frame update
     void Start()
     {
+        benvenutoCollider.SetActive(false);
         colliders[0] = francescoCollider;
         colliders[1] = benvenutoCollider;
         colliders[2] = mappaCollider;
@@ -28,6 +31,12 @@ public class HotspotsManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Inizia()
+    {
+        benvenutoCollider.SetActive(true);
+        istruzioni.enabled = false;
     }
 
     public void AbleDisable()
@@ -44,6 +53,7 @@ public class HotspotsManager : MonoBehaviour
         {
             colliders[i].SetActive(true);
         }
+        hotspostsActive = true;
     }
     void Disable()
     {
@@ -51,5 +61,6 @@ public class HotspotsManager : MonoBehaviour
         {
             colliders[i].SetActive(false);
         }
+        hotspostsActive = false;
     }
 }

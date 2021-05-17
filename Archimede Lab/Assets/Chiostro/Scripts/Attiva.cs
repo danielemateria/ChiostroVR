@@ -32,17 +32,21 @@ public class Attiva : MonoBehaviour
 
     public void AttivaDisattiva()
     {
+        AudioSource sourceBackground = audioManager.backgroundAudio.GetComponent<AudioSource>();
+        audioManager.audioPrincipale.clip = sourceBackground.clip;
         if (meshScreen.enabled)
         {
             meshScreen.enabled = false;
             videoPlayer.Stop();
             playing = false;
+            sourceBackground.Play();
         }
         else if(!meshScreen.enabled)
         {
             meshScreen.enabled = true;
             videoPlayer.Play();
             playing = true;
+            sourceBackground.Stop();
         }
     }
 

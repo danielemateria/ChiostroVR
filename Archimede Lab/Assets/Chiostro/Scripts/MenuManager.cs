@@ -7,12 +7,13 @@ public class MenuManager : MonoBehaviour
     public Canvas menuPrincipale;
     public Canvas menuAudio;
     public Canvas menuVideo;
-
+    public Canvas menuOptions;
     void Start()
     {
         menuPrincipale.enabled = false;
         menuAudio.enabled = false;
         menuVideo.enabled = false;
+        menuOptions.enabled = false;
     }
 
     private void Update()
@@ -23,6 +24,8 @@ public class MenuManager : MonoBehaviour
                 menuAudio.enabled = false;
             if (menuVideo.enabled)
                 menuVideo.enabled = false;
+            if (menuOptions.enabled)
+                menuOptions.enabled = false;
 
             if (menuPrincipale.enabled)
             {
@@ -60,6 +63,20 @@ public class MenuManager : MonoBehaviour
         {
             menuPrincipale.enabled = true;
             menuVideo.enabled = false;
+        }
+    }
+
+    public void openCloseOptionsMenu()
+    {
+        if (!menuOptions.enabled)
+        {
+            menuOptions.enabled = true;
+            menuPrincipale.enabled = false;
+        }
+        else
+        {
+            menuPrincipale.enabled = true;
+            menuOptions.enabled = false;
         }
     }
 }

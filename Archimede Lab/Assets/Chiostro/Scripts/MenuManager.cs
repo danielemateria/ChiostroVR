@@ -8,6 +8,8 @@ public class MenuManager : MonoBehaviour
     public Canvas menuAudio;
     public Canvas menuVideo;
     public Canvas menuOptions;
+    public GameObject panel;
+
     void Start()
     {
         menuPrincipale.enabled = false;
@@ -27,6 +29,8 @@ public class MenuManager : MonoBehaviour
             if (menuOptions.enabled)
                 menuOptions.enabled = false;
 
+
+
             if (menuPrincipale.enabled)
             {
                 menuPrincipale.enabled = false;
@@ -34,11 +38,25 @@ public class MenuManager : MonoBehaviour
             else
             {
                 menuPrincipale.enabled = true;
+                OpenPanelMenu();
             }
         }
     }
 
-    public void openCloseAudioMenu()
+    public void OpenPanelMenu()
+    {
+        if(panel != null)
+        {
+            Animator animator = panel.GetComponent<Animator>();
+            if(animator != null)
+            {
+                bool isOpen = animator.GetBool("open");
+                animator.SetBool("open", !isOpen);
+            }
+        }
+    }
+
+    public void OpenCloseAudioMenu()
     {
         if (!menuAudio.enabled)
         {
@@ -52,7 +70,7 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public void openCloseVideoMenu()
+    public void OpenCloseVideoMenu()
     {
         if (!menuVideo.enabled)
         {
@@ -66,7 +84,7 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public void openCloseOptionsMenu()
+    public void OpenCloseOptionsMenu()
     {
         if (!menuOptions.enabled)
         {

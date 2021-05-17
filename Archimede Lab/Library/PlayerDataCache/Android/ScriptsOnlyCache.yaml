@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - AudioStop
     - DontDestroyAudio
     - HandedInputSelector
+    - HotspotsManager
     - LaserPointer
     - MenuManager
     - ONSPSettings
@@ -35,6 +36,8 @@ ScriptsOnlyBuild:
     - OVRRaycaster
     - OVRSceneSampleController
     - UnityEngine.EventSystems.OVRInputModule
+    Unity.2D.Animation.Editor.dll:
+    - UnityEditor.U2D.Animation.BoneGizmo
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.XR.Management.Editor.dll:
@@ -45,6 +48,14 @@ ScriptsOnlyBuild:
     Unity.XR.Oculus.dll:
     - Unity.XR.Oculus.OculusLoader
     - Unity.XR.Oculus.OculusSettings
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -55,6 +66,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
+    com.unity.quicksearch.dll:
+    - Unity.QuickSearch.SearchDatabase
   sceneClasses:
     Assets/Scenes/Chiostro.unity:
     - Class: 1
@@ -101,78 +114,82 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
+    - Class: 111
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11396}
+      Script: {instanceID: 11408}
     - Class: 114
-      Script: {instanceID: 11398}
+      Script: {instanceID: 11410}
     - Class: 114
-      Script: {instanceID: 11402}
+      Script: {instanceID: 11414}
     - Class: 114
-      Script: {instanceID: 11434}
+      Script: {instanceID: 11454}
     - Class: 114
-      Script: {instanceID: 11510}
+      Script: {instanceID: 11552}
     - Class: 114
-      Script: {instanceID: 11512}
+      Script: {instanceID: 11554}
     - Class: 114
-      Script: {instanceID: 11664}
+      Script: {instanceID: 11800}
     - Class: 114
-      Script: {instanceID: 11774}
+      Script: {instanceID: 11942}
     - Class: 114
-      Script: {instanceID: 11890}
+      Script: {instanceID: 12094}
     - Class: 114
-      Script: {instanceID: 12166}
+      Script: {instanceID: 12458}
     - Class: 114
-      Script: {instanceID: 12250}
+      Script: {instanceID: 12576}
     - Class: 114
-      Script: {instanceID: 12360}
+      Script: {instanceID: 12730}
     - Class: 114
-      Script: {instanceID: 12494}
+      Script: {instanceID: 12904}
     - Class: 114
-      Script: {instanceID: 12520}
+      Script: {instanceID: 12932}
     - Class: 114
-      Script: {instanceID: 12582}
+      Script: {instanceID: 13028}
     - Class: 114
-      Script: {instanceID: 12690}
+      Script: {instanceID: 13188}
     - Class: 114
-      Script: {instanceID: 12838}
+      Script: {instanceID: 13412}
     - Class: 114
-      Script: {instanceID: 12860}
+      Script: {instanceID: 13444}
     - Class: 114
-      Script: {instanceID: 12952}
+      Script: {instanceID: 13568}
     - Class: 114
-      Script: {instanceID: 13000}
+      Script: {instanceID: 13644}
     - Class: 114
-      Script: {instanceID: 13082}
+      Script: {instanceID: 13744}
     - Class: 114
-      Script: {instanceID: 13126}
+      Script: {instanceID: 13800}
     - Class: 114
-      Script: {instanceID: 13214}
+      Script: {instanceID: 13924}
     - Class: 114
-      Script: {instanceID: 13230}
+      Script: {instanceID: 13940}
     - Class: 114
-      Script: {instanceID: 13342}
+      Script: {instanceID: 14074}
     - Class: 114
-      Script: {instanceID: 13446}
+      Script: {instanceID: 14178}
     - Class: 114
-      Script: {instanceID: 13654}
+      Script: {instanceID: 14224}
     - Class: 114
-      Script: {instanceID: 13846}
+      Script: {instanceID: 14510}
     - Class: 114
-      Script: {instanceID: 13864}
+      Script: {instanceID: 14762}
     - Class: 114
-      Script: {instanceID: 13934}
+      Script: {instanceID: 14796}
     - Class: 114
-      Script: {instanceID: 13944}
+      Script: {instanceID: 14894}
     - Class: 114
-      Script: {instanceID: 13946}
+      Script: {instanceID: 14908}
     - Class: 114
-      Script: {instanceID: 13964}
+      Script: {instanceID: 14912}
     - Class: 114
-      Script: {instanceID: 14232}
+      Script: {instanceID: 14934}
     - Class: 114
-      Script: {instanceID: 14266}
+      Script: {instanceID: 15292}
     - Class: 114
-      Script: {instanceID: 14302}
+      Script: {instanceID: 15336}
+    - Class: 114
+      Script: {instanceID: 15394}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -616,6 +633,12 @@ ScriptsOnlyBuild:
     className: OVRVignette
   - hash:
       serializedVersion: 2
+      Hash: 87cef3c82381dc586f6772c3e27561b6
+    assemblyName: Unity.2D.Animation.Runtime.dll
+    namespaceName: UnityEngine.Experimental.U2D.Animation
+    className: SpriteLibrary
+  - hash:
+      serializedVersion: 2
       Hash: ef5c43f921427d03730f6ea4c848f07d
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -758,6 +781,12 @@ ScriptsOnlyBuild:
     assemblyName: Oculus.Platform.dll
     namespaceName: Oculus.Platform.Samples.VrBoardGame
     className: IAPManager
+  - hash:
+      serializedVersion: 2
+      Hash: b424b4eeb810aecb0ff91c62639241e9
+    assemblyName: Unity.2D.Animation.Runtime.dll
+    namespaceName: UnityEngine.Experimental.U2D.Animation
+    className: SpriteResolver
   - hash:
       serializedVersion: 2
       Hash: 0fb27be807aa299702f28ad0bcad1f46
@@ -986,6 +1015,12 @@ ScriptsOnlyBuild:
     assemblyName: Oculus.VR.dll
     namespaceName: 
     className: OVRResetOrientation
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.2D.Animation.Runtime.dll
+    namespaceName: UnityEngine.U2D.Animation
+    className: SpriteSkinEntity
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1336,6 +1371,12 @@ ScriptsOnlyBuild:
     className: MouseLook
   - hash:
       serializedVersion: 2
+      Hash: 71b711096c6c32621c1d4c02310898b7
+    assemblyName: Unity.2D.Animation.Runtime.dll
+    namespaceName: UnityEngine.U2D.Animation
+    className: SpriteSkin
+  - hash:
+      serializedVersion: 2
       Hash: 4c063458ca029e84d4f59c22fc3c5fca
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1384,6 +1425,12 @@ ScriptsOnlyBuild:
     className: OvrAvatarRemoteDriver
   - hash:
       serializedVersion: 2
+      Hash: 907492286347a88e528f742b9fa21e28
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HotspotsManager
+  - hash:
+      serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1394,6 +1441,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_FontAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 28cfb4bd305dd11c6326cc3ee7c14138
+    assemblyName: Unity.2D.Animation.Runtime.dll
+    namespaceName: UnityEngine.Experimental.U2D.Animation
+    className: SpriteLibraryAsset
   - hash:
       serializedVersion: 2
       Hash: 87ad3705a58f19c47136728d4a6e9c47
@@ -1492,7 +1545,7 @@ ScriptsOnlyBuild:
     className: OVRMeshRenderer
   - hash:
       serializedVersion: 2
-      Hash: 5871f714bef009941ad3805b5c84bb5c
+      Hash: 524570606bf72c44365a1e53c9a94a15
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuManager

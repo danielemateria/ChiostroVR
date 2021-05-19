@@ -12,11 +12,16 @@ public class VideoManager : MonoBehaviour
     public VideoPlayer videoPlayerPresentazione;
     public VideoPlayer videoPlayerAereo;
     public MeshRenderer meshScreen;
+    public MeshRenderer meshBack;
     bool playing;
+    public MenuManager menuManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        meshBack.enabled = false;
+        videoPlayer.EnableAudioTrack(0, true);
+        videoPlayer.Prepare();
         meshScreen = screen.GetComponent<MeshRenderer>();
         meshScreen.enabled = false;
         playing = false;
@@ -27,6 +32,7 @@ public class VideoManager : MonoBehaviour
     {
         if (!videoPlayer.isPlaying && playing)
         {
+            meshBack.enabled = false;
             meshScreen.enabled = false;
             playing = false;
             audioManager.BackgroundResume();
@@ -36,12 +42,14 @@ public class VideoManager : MonoBehaviour
     {
         if (meshScreen.enabled)
         {
+            meshBack.enabled = false;
             meshScreen.enabled = false;
             videoPlayer.Stop();
             playing = false;
         }
         else if (!meshScreen.enabled)
         {
+            meshBack.enabled = true;
             meshScreen.enabled = true;
             videoPlayer.Play();
             playing = true;
@@ -53,8 +61,14 @@ public class VideoManager : MonoBehaviour
         if (!meshScreen.enabled)
         {
             SwitchIndex(index);
+            meshBack.enabled = true;
             meshScreen.enabled = true;
             playing = true;
+            if (videoPlayer.isPlaying)
+            {
+                menuManager.OpenCloseVideoMenu();
+                menuManager.menuPrincipale.enabled = false;
+            }
             videoPlayer.Play();
         }
     }
@@ -63,6 +77,7 @@ public class VideoManager : MonoBehaviour
     {
         if (meshScreen.enabled)
         {
+            meshBack.enabled = false;
             meshScreen.enabled = false;
             playing = false;
             videoPlayer.Pause();

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HotspotsManager : MonoBehaviour
 {
@@ -11,7 +12,13 @@ public class HotspotsManager : MonoBehaviour
     public GameObject pozzoCollider;
     public GameObject porteCollider;
     public GameObject porteCollider1;
-    private GameObject[] colliders = new GameObject[6];
+    public GameObject agataCollider;
+
+    public bool buttonsActive = true;
+    public GameObject buttonAffreschi, buttonArchitettura, buttonComplesso, buttonCostruzione, buttonPozzo, buttonTerritorio, buttonUtilizzo;
+
+    private GameObject[] colliders = new GameObject[7];
+    private GameObject[] buttons = new GameObject[7];
     public Canvas istruzioni;
     public OVRPlayerController player;
 
@@ -25,6 +32,15 @@ public class HotspotsManager : MonoBehaviour
         colliders[3] = pozzoCollider;
         colliders[4] = porteCollider;
         colliders[5] = porteCollider1;
+        colliders[6] = agataCollider;
+
+        buttons[0] = buttonAffreschi;
+        buttons[1] = buttonArchitettura;
+        buttons[2] = buttonComplesso;
+        buttons[3] = buttonCostruzione;
+        buttons[4] = buttonPozzo;
+        buttons[5] = buttonTerritorio;
+        buttons[6] = buttonUtilizzo;
     }
 
     // Update is called once per frame
@@ -60,7 +76,38 @@ public class HotspotsManager : MonoBehaviour
         for(int i = 0; i < colliders.Length; i++)
         {
             colliders[i].SetActive(false);
+            colliders[i].GetComponent<TurnBack>().hotspot.enabled = false;
         }
         hotspostsActive = false;
+    }
+
+    public void AbleDisableButtons()
+    {
+        if (buttonsActive)
+        {
+            DisableButtons();
+        }
+        else
+        {
+            AbleButtons();
+        }
+    }
+
+    void AbleButtons()
+    {
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].SetActive(true);
+        }
+        buttonsActive = true;
+    }
+
+    void DisableButtons()
+    {
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].SetActive(false);
+        }
+        buttonsActive = false;
     }
 }

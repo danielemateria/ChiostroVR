@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    public GameObject backgroundAudio;
     public GameObject buttonAffreschi;
     public GameObject buttonArchitettura;
     public GameObject buttonCostruzione;
@@ -13,7 +13,6 @@ public class AudioManager : MonoBehaviour
     public GameObject buttonTerritorio;
     public GameObject buttonUtilizzo;
 
-    private AudioSource sourceBackground;
     private AudioSource audioAffreschi;
     private AudioSource audioArchitettura;
     private AudioSource audioCostruzione;
@@ -22,15 +21,17 @@ public class AudioManager : MonoBehaviour
     private AudioSource audioTerritorio;
     private AudioSource audioUtilizzo;
 
+    public AudioClip backgroundClip;
+
     public AudioSource audioPrincipale;
+    public Slider sliderVolume;
 
     private bool isPressed;
     // Start is called before the first frame update
     void Start()
     {
         isPressed = false;
-        audioPrincipale.volume = (float)0.2;
-        sourceBackground = backgroundAudio.GetComponent<AudioSource>();
+        audioPrincipale.clip = backgroundClip;
         audioAffreschi = buttonAffreschi.GetComponent<AudioSource>();
         audioArchitettura = buttonArchitettura.GetComponent<AudioSource>();
         audioComplesso = buttonComplesso.GetComponent<AudioSource>();
@@ -46,7 +47,7 @@ public class AudioManager : MonoBehaviour
         if (!audioPrincipale.isPlaying && isPressed)
         {
             audioPrincipale.volume = (float)0.2;
-            audioPrincipale.clip = sourceBackground.clip;
+            audioPrincipale.clip = backgroundClip;
             audioPrincipale.Play();
             isPressed = false;
         }
@@ -66,7 +67,7 @@ public class AudioManager : MonoBehaviour
             isPressed = false;
             audioPrincipale.Stop();
             audioPrincipale.volume = (float)0.2;
-            audioPrincipale.clip = sourceBackground.clip;
+            audioPrincipale.clip = backgroundClip;
             audioPrincipale.Play();
         }
     }
@@ -94,21 +95,16 @@ public class AudioManager : MonoBehaviour
         audioPrincipale.Play();
         isPressed = false;
     }
-
     public void BackgroundStop()
     {
-        if(audioPrincipale.clip != sourceBackground.clip)
-        {
-            audioPrincipale.clip = sourceBackground.clip;
-        }
         audioPrincipale.Stop();
     }
 
     public void BackgroundResume()
     {
-        if (audioPrincipale.clip != sourceBackground.clip)
+        if (audioPrincipale.clip != backgroundClip)
         {
-            audioPrincipale.clip = sourceBackground.clip;
+            audioPrincipale.clip = backgroundClip;
         }
         audioPrincipale.Play();
     }
@@ -146,5 +142,10 @@ public class AudioManager : MonoBehaviour
                 audioPrincipale.clip = audioUtilizzo.clip;
                 break;
         }
+    }
+
+    public void SetVolume()
+    {
+        audioPrincipale.volume = sliderVolume.value;
     }
 }

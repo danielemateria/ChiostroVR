@@ -8,10 +8,14 @@ public class MenuManager : MonoBehaviour
     public Canvas menuAudio;
     public Canvas menuVideo;
     public Canvas menuOptions;
-    public GameObject panel;
 
+    bool principale, audiom, video, options;
     void Start()
     {
+        principale = false;
+        audiom = false;
+        video = false;
+        options = false;
         menuPrincipale.enabled = false;
         menuAudio.enabled = false;
         menuVideo.enabled = false;
@@ -30,19 +34,21 @@ public class MenuManager : MonoBehaviour
                 menuOptions.enabled = false;
 
 
-
-            if (menuPrincipale.enabled)
+            if (principale)
             {
+                //menuPrincipale.GetComponent<MainMenuAppear>().Close();
+                principale = false;
                 menuPrincipale.enabled = false;
             }
             else
             {
+                principale = true;
+                //menuPrincipale.GetComponent<MainMenuAppear>().Open();
                 menuPrincipale.enabled = true;
                 //OpenPanelMenu();
             }
         }
     }
-
     /*public void OpenPanelMenu()
     {
         if(panel != null)
@@ -58,43 +64,55 @@ public class MenuManager : MonoBehaviour
 
     public void OpenCloseAudioMenu()
     {
-        if (!menuAudio.enabled)
+        if (!audiom)
         {
+            audiom = true;
             menuPrincipale.enabled = false;
             menuAudio.enabled = true;
+            //menuAudio.GetComponent<MainMenuAppear>().Open();
         }
         else
         {
+            audiom = false;
             menuPrincipale.enabled = true;
             menuAudio.enabled = false;
+            //menuAudio.GetComponent<MainMenuAppear>().Close();
         }
     }
 
     public void OpenCloseVideoMenu()
     {
-        if (!menuVideo.enabled)
+        if (!video)
         {
+            video = true;
             menuPrincipale.enabled = false;
             menuVideo.enabled = true;
+            //menuVideo.GetComponent<MainMenuAppear>().Open();
         }
         else
         {
+            video = false;
             menuPrincipale.enabled = true;
             menuVideo.enabled = false;
+            //menuVideo.GetComponent<MainMenuAppear>().Close();
         }
     }
 
     public void OpenCloseOptionsMenu()
     {
-        if (!menuOptions.enabled)
+        if (!options)
         {
+            options = true;
             menuOptions.enabled = true;
             menuPrincipale.enabled = false;
+            //menuOptions.GetComponent<MainMenuAppear>().Open();
         }
         else
         {
+            options = false;
             menuPrincipale.enabled = true;
             menuOptions.enabled = false;
+            //menuOptions.GetComponent<MainMenuAppear>().Close();
         }
     }
 }

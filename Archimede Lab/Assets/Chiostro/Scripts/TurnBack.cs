@@ -26,6 +26,7 @@ public class TurnBack : MonoBehaviour {
 
 	public Canvas hotspot;
 	public GameObject cube;
+	public GameObject oggetto = null;
 
     private void Start()
     {
@@ -44,6 +45,8 @@ public class TurnBack : MonoBehaviour {
 		GuiOn = false;
 		hotspot.enabled = false;
 		cube.SetActive(true);
+		if(oggetto != null)
+			oggetto.GetComponent<PozzoAppear>().Close();
 	}
 
 	void OnGUI()
@@ -62,6 +65,8 @@ public class TurnBack : MonoBehaviour {
 
 			hotspot.enabled = true;
 			cube.SetActive(false);
+			if(oggetto != null)
+				oggetto.GetComponent<PozzoAppear>().Open();
 
 			// End the group we started above. This is very important to remember!
 			GUI.EndGroup ();

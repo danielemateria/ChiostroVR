@@ -25,6 +25,7 @@ public class TurnBack : MonoBehaviour {
 	public GUISkin customSkin;
 
 	public Canvas hotspot;
+	public GameObject cube;
 
     private void Start()
     {
@@ -42,6 +43,7 @@ public class TurnBack : MonoBehaviour {
 	{
 		GuiOn = false;
 		hotspot.enabled = false;
+		cube.SetActive(true);
 	}
 
 	void OnGUI()
@@ -59,6 +61,7 @@ public class TurnBack : MonoBehaviour {
 			// All rectangles are now adjusted to the group. (0,0) is the topleft corner of the group.
 
 			hotspot.enabled = true;
+			cube.SetActive(false);
 
 			// End the group we started above. This is very important to remember!
 			GUI.EndGroup ();

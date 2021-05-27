@@ -27,7 +27,6 @@ public class AudioManager : MonoBehaviour
     public Slider sliderVolume;
 
     private bool isPressed;
-    // Start is called before the first frame update
     void Start()
     {
         isPressed = false;
@@ -41,7 +40,6 @@ public class AudioManager : MonoBehaviour
         audioUtilizzo = buttonUtilizzo.GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!audioPrincipale.isPlaying && isPressed)

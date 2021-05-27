@@ -36,31 +36,16 @@ public class MenuManager : MonoBehaviour
 
             if (principale)
             {
-                //menuPrincipale.GetComponent<MainMenuAppear>().Close();
                 principale = false;
                 menuPrincipale.enabled = false;
             }
             else
             {
                 principale = true;
-                //menuPrincipale.GetComponent<MainMenuAppear>().Open();
                 menuPrincipale.enabled = true;
-                //OpenPanelMenu();
             }
         }
     }
-    /*public void OpenPanelMenu()
-    {
-        if(panel != null)
-        {
-            Animator animator = panel.GetComponent<Animator>();
-            if(animator != null)
-            {
-                bool isOpen = animator.GetBool("open");
-                animator.SetBool("open", !isOpen);
-            }
-        }
-    }*/
 
     public void OpenCloseAudioMenu()
     {
@@ -69,14 +54,12 @@ public class MenuManager : MonoBehaviour
             audiom = true;
             menuPrincipale.enabled = false;
             menuAudio.enabled = true;
-            //menuAudio.GetComponent<MainMenuAppear>().Open();
         }
         else
         {
             audiom = false;
             menuPrincipale.enabled = true;
             menuAudio.enabled = false;
-            //menuAudio.GetComponent<MainMenuAppear>().Close();
         }
     }
 
@@ -87,14 +70,12 @@ public class MenuManager : MonoBehaviour
             video = true;
             menuPrincipale.enabled = false;
             menuVideo.enabled = true;
-            //menuVideo.GetComponent<MainMenuAppear>().Open();
         }
         else
         {
             video = false;
             menuPrincipale.enabled = true;
             menuVideo.enabled = false;
-            //menuVideo.GetComponent<MainMenuAppear>().Close();
         }
     }
 
@@ -105,14 +86,12 @@ public class MenuManager : MonoBehaviour
             options = true;
             menuOptions.enabled = true;
             menuPrincipale.enabled = false;
-            //menuOptions.GetComponent<MainMenuAppear>().Open();
         }
         else
         {
             options = false;
             menuPrincipale.enabled = true;
             menuOptions.enabled = false;
-            //menuOptions.GetComponent<MainMenuAppear>().Close();
         }
     }
 }

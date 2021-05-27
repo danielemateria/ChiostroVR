@@ -13,16 +13,20 @@ public class HotspotsManager : MonoBehaviour
     public GameObject porteCollider;
     public GameObject porteCollider1;
     public GameObject agataCollider;
+    public GameObject moriCollider;
+    public GameObject santiCollider;
 
     public bool buttonsActive = true;
     public GameObject buttonAffreschi, buttonArchitettura, buttonComplesso, buttonCostruzione, buttonPozzo, buttonTerritorio, buttonUtilizzo;
+    public MeshRenderer francescoCube, mappaCube, pozzoCube, porteCube, agataCube, moriCube, santiCube;
 
-    private GameObject[] colliders = new GameObject[7];
+    private GameObject[] colliders = new GameObject[9];
     private GameObject[] buttons = new GameObject[7];
+    private MeshRenderer[] cubes = new MeshRenderer[7];
+
     public Canvas istruzioni;
     public OVRPlayerController player;
 
-    // Start is called before the first frame update
     void Start()
     {
         benvenutoCollider.SetActive(false);
@@ -33,6 +37,8 @@ public class HotspotsManager : MonoBehaviour
         colliders[4] = porteCollider;
         colliders[5] = porteCollider1;
         colliders[6] = agataCollider;
+        colliders[7] = moriCollider;
+        colliders[8] = santiCollider;
 
         buttons[0] = buttonAffreschi;
         buttons[1] = buttonArchitettura;
@@ -41,12 +47,14 @@ public class HotspotsManager : MonoBehaviour
         buttons[4] = buttonPozzo;
         buttons[5] = buttonTerritorio;
         buttons[6] = buttonUtilizzo;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        cubes[0] = francescoCube;
+        cubes[1] = mappaCube;
+        cubes[2] = pozzoCube;
+        cubes[3] = porteCube;
+        cubes[4] = agataCube;
+        cubes[5] = moriCube;
+        cubes[6] = santiCube;
     }
 
     public void Inizia()
@@ -66,9 +74,11 @@ public class HotspotsManager : MonoBehaviour
     void Able()
     {
         for(int i = 0; i < colliders.Length; i++)
-        {
             colliders[i].SetActive(true);
-        }
+
+        for(int i = 0; i < cubes.Length; i++)
+            cubes[i].enabled = true;
+
         hotspostsActive = true;
     }
     void Disable()
@@ -78,6 +88,10 @@ public class HotspotsManager : MonoBehaviour
             colliders[i].SetActive(false);
             colliders[i].GetComponent<TurnBack>().hotspot.enabled = false;
         }
+
+        for(int i = 0; i < cubes.Length; i++)
+            cubes[i].enabled = false;
+
         hotspostsActive = false;
     }
 

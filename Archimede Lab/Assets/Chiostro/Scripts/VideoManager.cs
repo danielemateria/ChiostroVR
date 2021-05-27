@@ -6,22 +6,22 @@ using UnityEngine.Video;
 
 public class VideoManager : MonoBehaviour
 {
-    public AudioManager audioManager;
-    public GameObject TV;
-    public GameObject screen;
-    public VideoPlayer videoPlayer;
-    public VideoPlayer videoPlayerPresentazione;
-    public VideoPlayer videoPlayerAereo;
-    public MeshRenderer meshScreen;
-    public MeshRenderer meshBack;
-    bool playing;
-    public MenuManager menuManager;
-    public Canvas commands;
-    public bool inPausa = false;
-    public Button playPauseButton;
-    public Sprite play, pause;
+    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private GameObject TV;
+    [SerializeField] private GameObject screen;
+    [SerializeField] private VideoPlayer videoPlayer;
+    [SerializeField] private VideoPlayer videoPlayerPresentazione;
+    [SerializeField] private VideoPlayer videoPlayerAereo;
+    [SerializeField] private MeshRenderer meshScreen;
+    [SerializeField] private MeshRenderer meshBack;
+    private bool playing;
+    [SerializeField] private MenuManager menuManager;
+    [SerializeField] private Canvas commands;
+    [SerializeField] private bool inPausa = false;
+    [SerializeField] private Button playPauseButton;
+    [SerializeField] private Sprite play, pause;
+    [SerializeField] private Slider sliderVolume;
 
-    // Start is called before the first frame update
     void Start()
     {
         commands.enabled = false;
@@ -31,7 +31,6 @@ public class VideoManager : MonoBehaviour
         playing = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!videoPlayer.isPlaying && playing && !inPausa)
@@ -63,19 +62,6 @@ public class VideoManager : MonoBehaviour
         }
     }
 
-    private IEnumerator PlayVideoInThisURL(string _url)
-    {
-        videoPlayer.source = UnityEngine.Video.VideoSource.Url;
-        videoPlayer.url = _url;
-        videoPlayer.Prepare();
-
-        while (videoPlayer.isPrepared == false)
-        {
-            yield return null;
-        }
-        videoPlayer.Play();
-    }
-
     public void PlaySelectedVideo(int index)
     {
         if (!meshScreen.enabled)
@@ -91,7 +77,6 @@ public class VideoManager : MonoBehaviour
                 menuManager.menuPrincipale.enabled = false;
             }
             videoPlayer.Play();
-            //PlayVideoInThisURL(videoPlayer.url);
         }
     }
 
@@ -122,6 +107,18 @@ public class VideoManager : MonoBehaviour
             inPausa = false;
             videoPlayer.Stop();
             audioManager.BackgroundResume();
+        }
+    }
+
+    public void VolumeVideo()
+    {
+        if(videoPlayer.clip == videoPlayerPresentazione.clip)
+        {
+            videoPlayer.SetDirectAudioVolume(videoPlayerPresentazione.audioTrackCount, sliderVolume.value);
+        }
+        else if(videoPlayer.clip == videoPlayerAereo)
+        {
+            videoPlayer.SetDirectAudioVolume(videoPlayerAereo.audioTrackCount, sliderVolume.value);
         }
     }
 
